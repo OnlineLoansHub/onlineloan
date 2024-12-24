@@ -22,6 +22,11 @@ a {
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+      max-width: 1140px;
+    }
+}
 .text-blue-primary {
     color: var(--blue1);
 }
@@ -159,16 +164,11 @@ header nav ul li a:hover {
 header nav ul li a:hover::after {
     width: 100%;
 }
-.hero-bg {
-    background-image: url('../images/hero-bg.png');
-    background-repeat: no-repeat;
+.hero-section {
+    background-image: url('../images/hero-banner-bg.png');
     background-position: center;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .hero-text span{
     background-color: var(--white);
@@ -455,7 +455,7 @@ select {
     color: #606773;
     padding: 12px;
     border-radius: 8px;
-    min-height: 145px;
+    min-height: 168px;
 }
 .review-slider .slick-slide {
     margin-right: 24px;
