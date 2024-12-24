@@ -16,4 +16,38 @@ jQuery(document).ready(function () {
             ]
         });
     }
+    $('.toggle-btn').on('click', function (e) {
+        e.preventDefault();
+      
+        // Find the lender-item-more and lender-card elements
+        var $lenderItemMore = $(this).closest('.lender-info').find('.lender-item-more');
+        var $lenderCard = $(this).closest('.lender-card');
+      
+        // Toggle visibility and button text with animation
+        $lenderItemMore.stop(true, true).slideToggle('slow', function() {
+          // Calculate the reduced width by subtracting 20%
+          var cardWidth = $lenderCard.outerWidth() * 0.78; 
+      
+          $(this).css('width', cardWidth + 'px'); // Adjust width after animation
+      
+          if ($(this).is(':visible')) {
+            $(this).prevAll('.toggle-btn').hide(); 
+          } else {
+            $(this).prevAll('.toggle-btn').show(); 
+          }
+        });
+      });
+      
+      // Adjust the width dynamically on window resize
+      $(window).on('resize', function () {
+        $('.lender-item-more:visible').each(function () {
+          var $lenderCard = $(this).closest('.lender-card');
+          var cardWidth = $lenderCard.outerWidth() * 0.78; 
+          $(this).css('width', cardWidth + 'px'); // Adjust width on resize
+        });
+      });
+    
+    
+    
+    
 });

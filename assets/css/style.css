@@ -15,7 +15,7 @@ body {
     color: var(--black2);
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #DBEEFF, #FFF5E1);
+    background: linear-gradient(to right, #e5f0f7, #FFF5E1);
     overflow-x: hidden;
 }
 a {
@@ -40,11 +40,17 @@ a {
 .pt-80 {
     padding-top: 80px;
 }
+.pt-100 {
+    padding-top: 100px;
+}
 .pb-80 {
     padding-bottom: 80px;
 }
 .pb-100 {
     padding-bottom: 100px;
+}
+.pb-150 {
+    padding-bottom: 150px;
 }
 .theme-btn {
     border: 1px solid var(--blue3);
@@ -64,7 +70,7 @@ a {
     text-align: center;
     line-height: 30px;
     font-size: 13px;
-    margin-left: 16px;
+    margin-left: 13px;
     display: inline-block;
 }
 .theme-btn:hover {
@@ -518,4 +524,189 @@ footer .text-small {
 }
 footer .footer-trust {
     max-width: 80px;
+}
+.top-banner {
+    background-image: url('../images/top-banner-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.filter-form > div {
+    width: calc(100% / 5 - 12px);
+}
+.lender-card {
+    background-color: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 6px 10px rgba(96, 163, 255, 0.08);
+    padding: 20px;
+    position: relative;
+}
+.lender-badge {
+    background-color: #F5A623;
+    border-radius: 6px;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    padding: 8px 17px;
+    display: inline-block;
+    position: absolute;
+    top: 1px;
+    left: -11px;
+}
+.lender-badge::after {
+    content: "";
+    border-top: 4px solid #9B6600;
+    border-right: 4px solid #9B6600;
+    border-left: 4px solid transparent;
+    position: absolute;
+    left: 2px;
+    bottom: -6px;
+    border-bottom: 4px solid transparent;
+}  
+.lender-item-wrapper > img {
+    max-width: 150px;
+    margin: 0 auto;
+    display: block;
+}
+.lender-item-more {
+    display: none;
+}
+.lender-item ul.facility-list li {
+    margin: 5px 0;
+    position: relative;
+}
+.lender-item ul.facility-list li::before {
+    content: "";
+    height: 4px;
+    width: 4px;
+    background-color: var(--blue3);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(140deg);
+    left: -10px;
+}
+.toggle-btn {
+    position: relative;
+    padding-right: 20px;
+}
+.toggle-btn::after {
+    content: "";
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    height: 8px;
+    right: 0;
+    position: absolute;
+    width: 8px;
+    top: 5px;
+    transform: rotate(135deg);
+    pointer-events: none;
+}
+.toggle-btn.show-less::after {
+    top: 8px;
+    transform: rotate(-45deg);
+}
+.lender-rating i {
+    color: #FAAD14;
+    font-size: 18px;
+}
+.lender-rating img {
+    max-width: 80px;
+}
+.rating-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: conic-gradient(#3289FF 0% 84%, #fff 85% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.progress-circle .inner-circle {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.progress-circle .inner-circle span {
+    font-size: 1.313rem;
+    font-weight: 500;
+}
+.lender-link span {
+    font-size: 14px;
+    font-weight: 500;
+}
+.lender-item-wrapper {
+    padding: 50px 0 25px;
+}
+.lender-item::before,
+.lender-more-right::before {
+    content: "";
+    height: 124px;
+    width: 1px;
+    position: absolute;
+    top: 10px;
+    border-left: 1px dashed var(--gray);
+    left: 0;
+}
+.lender-more-right {
+    width: 25%;
+    padding-left: 40px;
+    position: relative;
+}
+.lender-item {
+    padding: 0 35px;
+    position: relative;
+}
+.lender-info .lender-item:first-child::before {
+    top: 10px;
+    left: auto;
+    right: 0;
+}
+.lender-info .lender-item:nth-child(2)::before {
+    display: none;
+}
+.lender-info {
+    width: 45%;
+}
+.lender-info > div {
+    width: calc(100% / 2);
+}
+.lender-record {
+    width: 55%;
+}
+.lender-record > div {
+    width: calc(100% / 3);
+    justify-content: center;
+}
+.more-about-lender {
+    color: var(--blue2);
+}
+.services-list li{
+    width: calc(100% / 2 - 18px);
+}
+.lender-services {
+    width: 60%;
+}
+.lender-pro {
+    width: 40%;
+}
+.pro-list li,
+.con-list li {
+    margin: 5px 0;
+}
+.lender-more-left {
+    width: 75%;
+}
+.lender-more-right {
+    width: 35%;
 }
