@@ -217,6 +217,18 @@
     .modal-img img {
         max-width: 290px;
     }
+    .img1.sub-img {
+        max-width: 75px;
+    }
+    .img2.sub-img {
+        max-width: 114px;
+    }
+    .img3.sub-img {
+        max-width: 90px;
+    }
+    .img4.sub-img {
+        max-width: 80px;
+    }
 }
 @media(max-width: 768px){
     .fs-20 {
@@ -372,5 +384,21 @@
     .contact-modal .modal-footer .btn-primary {
         font-size: 16px;
         width: 100%;
+    }
+    .img1.sub-img {
+        max-width: 85px;
+        top: 15%;
+    }
+    .img2.sub-img {
+        top: 13%;
+    }
+    .img3.sub-img {
+        max-width: 100px;
+        top: 44%;
+    }
+    .img4.sub-img {
+        max-width: 80px;
+        top: 43%;
+        right: 10%;
     }
 }

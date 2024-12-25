@@ -208,6 +208,77 @@ header nav ul {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.hero-images {
+    position: relative;
+}
+.hero-images .sub-img {
+    position: absolute;
+}
+.img1.sub-img {
+    left: 0;
+    max-width: 112px;
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+    -webkit-animation: float 3s ease-in-out alternate infinite;
+    animation: float 3s ease-in-out alternate infinite;
+}
+.img2.sub-img {
+    right: 0;
+    max-width: 153px;
+    top: 0;
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+    -webkit-animation: float 4s ease-in-out alternate infinite;
+    animation: float 4s ease-in-out alternate infinite;
+}
+.img3.sub-img {
+    max-width: 145px;
+    left: 0;
+    top: 34%;
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+    -webkit-animation: float 5.5s ease-in-out alternate infinite;
+    animation: float 5.5s ease-in-out alternate infinite;
+}
+.img4.sub-img {
+    max-width: 121px;
+    top: 34%;
+    right: 0;
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+    -webkit-animation: float 5s ease-in-out alternate infinite;
+    animation: float 5s ease-in-out alternate infinite;
+}
+@-webkit-keyframes float {
+    0% {
+      -webkit-transform: translatey(0px);
+              transform: translatey(0px);
+    }
+    50% {
+      -webkit-transform: translatey(-15px);
+              transform: translatey(-15px);
+    }
+    100% {
+      -webkit-transform: translatey(0px);
+              transform: translatey(0px);
+    }
+}
+  
+@keyframes float {
+    0% {
+      -webkit-transform: translatey(0px);
+              transform: translatey(0px);
+    }
+    50% {
+
+      -webkit-transform: translatey(-20px);
+              transform: translatey(-20px);
+    }
+    100% {
+      -webkit-transform: translatey(0px);
+              transform: translatey(0px);
+    }
+}
 .hero-text span{
     background-color: var(--white);
     border-radius: 30px;
@@ -319,6 +390,12 @@ select {
     background-repeat: no-repeat;
     background-size: 16px 9px;
     background-position: 95% 54%;
+}
+.filter-form select {
+    background-image: url('../images/angle-down-small.svg');
+    background-repeat: no-repeat;
+    background-size: 10px 7px;
+    background-position: 44% 53%;
 }
 .calculate-result {
     border-radius: 8px;
@@ -529,13 +606,29 @@ footer {
     border-bottom: 0.5px solid #2F2F2F;
 }
 .useful-links li {
-    margin: 8px 0;
+    margin: 7px 0;
 }
 .useful-links li a {
     color: var(--white);
+    position: relative;
+    padding: 2px 0;
+    display: inline-block;
 }
-.useful-links li a:hover {
-    color: var(--blue3);
+.useful-links li a::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--white);
+    transition: all 0.3s ease-in-out;
+}
+.useful-links li a:hover::after {
+    visibility: visible;
+    opacity: 1;
 }
 .social-links li a {
     height: 40px;
@@ -573,12 +666,20 @@ footer .footer-trust {
 .filter-form > div {
     width: calc(100% / 5 - 12px);
 }
+.lender-section {
+    background-image: url('../images/lender-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .lender-card {
     background-color: var(--white);
     border-radius: 18px;
     box-shadow: 0 6px 10px rgba(96, 163, 255, 0.08);
     padding: 20px;
     position: relative;
+}
+.lender-card.active {
+    border: 1px solid var(--blue3);
 }
 .lender-badge {
     background-color: #F5A623;
@@ -727,6 +828,13 @@ footer .footer-trust {
     width: calc(100% / 3);
     justify-content: center;
 }
+.lender-record > div:nth-child(3) {
+    padding-right: 0;
+}
+.lender-link a {
+    max-width: 126px;
+    margin: 0 auto;
+}
 .more-about-lender {
     color: var(--blue2);
 }
@@ -832,6 +940,7 @@ input[type=number] {
     border-radius: 32px;
     background-color: var(--white);
     box-shadow: 0 6px 30px rgba(0,0,0,0.15);
+    display: none;
 }
 .modal-wrapper {
     position: relative;

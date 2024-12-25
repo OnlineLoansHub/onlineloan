@@ -62,9 +62,9 @@ jQuery(document).ready(function () {
   $(".confused-modal").hide();
 
   // Show the modal after 120 seconds
-  setTimeout(function () {
-      showModal();
-  }, 120000); // 120000 ms = 120 seconds
+  // setTimeout(function () {
+  //     showModal();
+  // }, 120000); 
 
   // Detect when the user is about to leave the page
   $(document).on("mouseleave", function (event) {
