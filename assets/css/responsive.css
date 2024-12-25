@@ -3,6 +3,11 @@
         padding: 0 25px;
     }
 }
+@media(max-width: 1200px){
+    .confused-modal {
+        max-width: 1140px;
+    }
+}
 @media(max-width: 1024px){
     .menu-toggle {
         display: block;
@@ -115,6 +120,12 @@
     .form-field label {
         font-size: 1rem;
     }
+    .confused-modal {
+        max-width: 95%;
+    }
+    .fs-20 {
+        font-size: 1rem;
+    }
 }
 @media(max-width: 990px){
     .loan-recommend ul li {
@@ -167,7 +178,7 @@
         flex-direction: column;
     }
     .contact-modal .modal-header {
-        padding: 20px;
+        padding:  20px 20px 0 20px;
     }
     .contact-modal .modal-body {
         padding: 0 20px;
@@ -185,7 +196,27 @@
     .contact-modal h2 {
         font-size: 28px;
     }
-    
+    .modal-content-area {
+        height: 100%;
+        flex-direction: column-reverse;
+    }
+    .modal-content-area > div {
+        width: 100%;
+    }
+    .modal-img {
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 32px;
+        padding: 50px 0;
+    }
+    .modal-text {
+        padding: 32px 15px 50px 15px;
+    }
+    .confused-modal {
+        top: 8%;
+    }
+    .modal-img img {
+        max-width: 290px;
+    }
 }
 @media(max-width: 768px){
     .fs-20 {

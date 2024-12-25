@@ -52,7 +52,33 @@ jQuery(document).ready(function () {
         $('body').toggleClass('menu-open'); // Toggle class on the body
         $(this).toggleClass('active'); // Toggle class on the clicked button
     });
-    
+
+    function showModal() {
+      $(".confused-modal").fadeIn(500).css("display", "flex"); // Adjusted for flex display if needed
+      $("body").addClass("popup-active"); // Add class to body
+  }
+
+  // Hide the modal initially
+  $(".confused-modal").hide();
+
+  // Show the modal after 120 seconds
+  setTimeout(function () {
+      showModal();
+  }, 120000); // 120000 ms = 120 seconds
+
+  // Detect when the user is about to leave the page
+  $(document).on("mouseleave", function (event) {
+      if (event.clientY <= 0) { // Detects when the mouse leaves the viewport at the top
+          showModal();
+      }
+  });
+
+  // Close button functionality
+  $(".btn-close-it").on("click", function () {
+      $(".confused-modal").fadeOut(500, function() {
+          $("body").removeClass("popup-active"); // Remove class from body
+      });
+  });
     
     
 });
