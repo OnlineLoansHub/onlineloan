@@ -11,7 +11,7 @@ jQuery(document).ready(function () {
             slidesToScroll: 1,
             responsive: [
                 { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3, infinite: true }},
-                { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 }},
+                { breakpoint: 990, settings: { slidesToShow: 2, slidesToScroll: 2 }},
                 { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 }},
             ]
         });
@@ -47,6 +47,11 @@ jQuery(document).ready(function () {
         });
       });
     
+
+      $('.menu-toggle').on('click', function () {
+        $('body').toggleClass('menu-open'); // Toggle class on the body
+        $(this).toggleClass('active'); // Toggle class on the clicked button
+    });
     
     
     

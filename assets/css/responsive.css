@@ -1,0 +1,345 @@
+@media(max-width: 1660px){
+    .lender-item {
+        padding: 0 25px;
+    }
+}
+@media(max-width: 1024px){
+    .menu-toggle {
+        display: block;
+    }
+    .header-btn {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        width: 280px;
+        background-color: #1D1F2C;
+        z-index: 99;
+        padding: 40px 30px;
+        transition: all 0.3s;
+    }
+    .menu-open .menu {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        color: #fff;
+    }
+    header nav ul li {
+        margin: 20px 0;
+    }
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .pt-50 {
+        padding-top: 40px;
+    }
+    .pt-80 {
+        padding-top: 40px;
+    }
+    .pt-100 {
+        padding-top: 40px;
+    }
+    .pb-80 {
+        padding-bottom: 40px;
+    }
+    .pb-100 {
+        padding-bottom: 50px;
+    }
+    header {
+        padding: 20px 0;
+    }
+    .loan-box {
+        width: calc(100% / 3 - 20px);
+    }
+    .loan-boxes {
+        justify-content: center;
+    }
+    .section-heading {
+        max-width: 100%;
+    }
+    .loan-recommend .quote {
+        max-width: 100%;
+    }
+    footer .footer-rating {
+      max-width: 100px;
+    }
+    footer .footer-trust {
+        max-width: 60px;
+    }
+    .lender-item {
+        padding: 0 15px;
+    }
+    .services-list {
+        flex-direction: column;
+    }
+    .services-list li {
+        width: 100%;
+    }
+    .lender-services {
+        width: 50%;
+    }
+    .lender-pro {
+        width: 50%;
+    }
+    .lender-more-right {
+        padding-left: 15px;
+    }
+    .toggle-btn.show-less {
+        margin-top: 20px;
+        display: inline-block;
+    }
+    .toggle-btn.show-less::after {
+        top: 11px;
+    }
+    .lender-item-wrapper > img {
+        max-width: 110px;
+    }
+    .pb-150 {
+        padding-bottom: 70px;
+    }
+    .form-control {
+        font-size: 16px;
+    }
+    .form-field label {
+        font-size: 1rem;
+    }
+}
+@media(max-width: 990px){
+    .loan-recommend ul li {
+        width: 100%;
+    }
+    .filter-form {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .filter-form > div {
+        width: calc(100% / 3 - 12px);
+    }
+    .lender-info {
+        width: 65%;
+        flex-direction: column;
+        border-right: 1px solid #D2D2D5;
+    }
+    .lender-record {
+        width: 35%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .lender-item-wrapper {
+        padding: 20px 0;
+    }
+    .lender-info > div {
+        width: 100%;
+    }
+    .lender-record > div {
+        width: 100%;
+    }
+    .lender-item::before, 
+    .lender-more-right::before {
+        display: none;
+    }
+    .more-about-lender {
+        flex-direction: column;
+    }
+    .lender-more-left,
+    .lender-services,
+    .lender-pro {
+        width: 100%;
+    }
+    .lender-more-right {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 15px;
+    }
+    .lender-more-left > .d-flex {
+        flex-direction: column;
+    }
+    .contact-modal .modal-header {
+        padding: 20px;
+    }
+    .contact-modal .modal-body {
+        padding: 0 20px;
+    }
+    .contact-modal .modal-footer {
+        padding: 0 20px 20px 20px;
+    }
+    .contact-modal .social-btns button {
+        height: 50px;
+        width: 50px;
+    }
+    .contact-modal .social-btns button img {
+        max-width: 30px;
+    }
+    .contact-modal h2 {
+        font-size: 28px;
+    }
+    
+}
+@media(max-width: 768px){
+    .fs-20 {
+        font-size: 1rem;
+    }
+    .lender-table .company-logo img {
+        max-width: 90px;
+    }
+    .lender-table .company-logo i {
+        font-size: 20px;
+    }
+    .faq-tabs .nav-link {
+        font-size: 1rem;
+    }
+    .faq-tabs {
+        gap: 20px;
+    }
+    .faq-tabs > ul {
+        width: 35%;
+    }
+    .review-members {
+        padding-left: 20px;
+    }
+    .review-slider .slick-slide {
+        margin-right: 20px;
+    }
+}
+@media(max-width: 660px){
+    .logo img {
+        max-width: 205px;
+    }
+    .fs-18 {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.75rem;
+    }
+    .hero-section {
+        background-image: url('../images/hero-banner-bg-mobile.png');
+    }
+    .loan-box {
+        width: calc(100% / 2 - 20px);
+        min-height: 115px;
+    }
+    .form-field label {
+        font-size:0.875rem;
+    }
+    .form-control {
+        height: 48px;
+        font-size: 1rem;
+    }
+    .btn.btn-light {
+        font-size: 1rem;
+    }
+    .lender-table thead tr th {
+        font-size: 1rem;
+        padding: 16px;
+    }
+    .lender-table .company-logo img {
+        width: 80px;
+    }
+    .lender-table .reason.fs-20 {
+        font-size: 0.875rem;
+    }
+    .lender-table tbody tr td {
+        padding: 16px;
+    }
+    .lender-table .rating img {
+        max-width: 55px;
+    }
+    .lender-table .company-logo i {
+        font-size: 16px;
+    }
+    .company-logo {
+        gap: 10px;
+    }
+    .faq-tabs > ul {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .faq-tabs .tab-content {
+        width: 100%;
+    }
+    .faq-tabs .accordion-button {
+        font-size: 1rem;
+    }
+    .review-slider .slick-slide {
+        margin-right: 0;
+    }
+    .filter-form > div {
+        width: calc(100% / 2 - 12px);
+    }
+    .lender-info {
+        width: 62%;
+    }
+    .lender-record {
+        width: 38%;
+    }
+    .lender-item-wrapper > img {
+        max-width: 100px;
+        padding-top: 30px;
+    }
+    .lender-info > div {
+        width: 100%;
+    }
+    .lender-card {
+        padding: 20px 12px;
+    }
+    .services-list li img {
+        max-width: 18px;
+    }
+    .lender-rating i,
+    .lender-rating span {
+        font-size: 14px;
+    }
+    .lender-rating img {
+        max-width: 70px;
+    }
+    .lender-link a {
+        font-size: 14px;
+        padding: 6px;
+    }
+    .lender-link a span {
+        height: 20px;
+        width: 20px;
+        font-size: 12px;
+        line-height: 19px;
+    }
+    .lender-item ul li {
+        font-size: 14px;
+    }
+    .lender-record .lender-item {
+        padding-right: 0;
+    }
+    .lender-record > div:first-child {
+        order: 2;
+    }
+    .lender-record > div:nth-child(2) {
+        order: 1;
+    }
+    .lender-record > div:nth-child(3) {
+        order: 3;
+    }
+    footer .footer-rating {
+        max-width: 120px;
+    }
+    footer .footer-trust {
+        max-width: 70px;
+    }
+    .contact-modal .modal-footer {
+        flex-direction: column;
+    }
+    .contact-modal .modal-footer .btn-primary {
+        font-size: 16px;
+        width: 100%;
+    }
+}
