@@ -9,6 +9,7 @@
     --gray: #D2D2D5;
     --gray2: #FAFAFF;
     --white: #fff;
+    --lightBlue: #F0F5FF;
 }  
 body {
     font-family: "Lato", serif;
@@ -280,7 +281,7 @@ header nav ul {
     }
 }
 .hero-text span{
-    background-color: var(--white);
+    background-color: var(--lightBlue);
     border-radius: 30px;
     padding: 8px 12px;
     font-weight: 600;
