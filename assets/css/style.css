@@ -675,9 +675,13 @@ footer .footer-trust {
 .lender-card {
     background-color: var(--white);
     border-radius: 18px;
-    box-shadow: 0 6px 10px rgba(96, 163, 255, 0.08);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
     padding: 20px;
+    transition: all 0.3s ease-in-out; /* Smooth hover effects */
     position: relative;
+}
+.lender-card:hover{
+    transform: scale(1.02); /* Slight zoom-in effect */
 }
 .lender-card.active {
     border: 1px solid var(--blue3);
