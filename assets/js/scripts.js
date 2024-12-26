@@ -73,15 +73,24 @@ function showModal() {
   //     showModal();
   // }, 120000); 
 
- // Detect when the user is about to leave the page
-$(document).on("mouseleave", function (event) {
-  // Check if the modal has already been shown this session
-  if (event.clientY <= 0 && !sessionStorage.getItem("modalShown")) {
-      showModal();
-      // Set a flag in sessionStorage to indicate the modal has been shown
-      sessionStorage.setItem("modalShown", "true");
-  }
+  $(document).on("mouseleave", function (event) {
+    // Define the specific pages where the modal should be shown
+    const targetPages = ["/index.html", "/loan-lenders"]; // Replace with your page paths
+
+    // Get the current page pathname
+    const currentPage = window.location.pathname;
+
+    // Check if the current page is in the list of target pages
+    if (targetPages.includes(currentPage)) {
+        // Check if the modal has already been shown this session
+        if (event.clientY <= 0 && !sessionStorage.getItem("modalShown")) {
+            showModal();
+            // Set a flag in sessionStorage to indicate the modal has been shown
+            sessionStorage.setItem("modalShown", "true");
+        }
+    }
 });
+
 
   // Close button functionality
   $(".btn-close-it").on("click", function () {
