@@ -53,10 +53,17 @@ jQuery(document).ready(function () {
         $(this).toggleClass('active'); // Toggle class on the clicked button
     });
 
-    function showModal() {
-      $(".confused-modal").fadeIn(500).css("display", "flex"); // Adjusted for flex display if needed
-      $("body").addClass("popup-active"); // Add class to body
-  }
+// Function to show the modal
+function showModal() {
+  $(".confused-modal").fadeIn(500).css("display", "flex"); // Show modal with flex display
+  $("body").addClass("popup-active"); // Add class to body for styling adjustments
+
+  // Close modal on close button click
+  $(".confused-modal .close-button").on("click", function () {
+      $(".confused-modal").fadeOut(500); // Fade out modal
+      $("body").removeClass("popup-active"); // Remove class from body
+  });
+}
 
   // Hide the modal initially
   $(".confused-modal").hide();
@@ -66,12 +73,15 @@ jQuery(document).ready(function () {
   //     showModal();
   // }, 120000); 
 
-  // Detect when the user is about to leave the page
-  $(document).on("mouseleave", function (event) {
-      if (event.clientY <= 0) { // Detects when the mouse leaves the viewport at the top
-          showModal();
-      }
-  });
+ // Detect when the user is about to leave the page
+$(document).on("mouseleave", function (event) {
+  // Check if the modal has already been shown this session
+  if (event.clientY <= 0 && !sessionStorage.getItem("modalShown")) {
+      showModal();
+      // Set a flag in sessionStorage to indicate the modal has been shown
+      sessionStorage.setItem("modalShown", "true");
+  }
+});
 
   // Close button functionality
   $(".btn-close-it").on("click", function () {
