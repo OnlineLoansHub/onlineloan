@@ -104,47 +104,55 @@ jQuery(document).ready(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Target the "Send Message" button
+  // Add event listener to the "Send Message" button
   const sendButton = document.querySelector("#contactModal .btn-primary");
-  console.log("got here");
-  console.log(sendButton);
-  console.log(document.querySelector('input[placeholder="Enter your name"]').value);
 
   sendButton.addEventListener("click", function (e) {
     e.preventDefault(); // Prevent default button behavior
-    console.log("sendButton");
-    console.log(document.querySelector('input[placeholder="Enter your name"]').value);
 
-    // Replace with your Google Apps Script URL
-    const scriptURL = "https://script.google.com/macros/s/AKfycbw60KFSSntgGpH_sOECgeazDXo0UlVIX4YgLjQ-wXTwCC7nZQtQ8cMwY90H4K6QTccb5A/exec";
+    // Google Apps Script URL (replace with your actual URL)
+    const scriptURL =
+      "https://script.google.com/macros/s/AKfycbxU16E4YqlYINEO96uPJDm7AYcO5q9bE2HBvuaMMWuYw2m47Lwv0UY11d2ARzLatUp2Iw/exec";
 
     // Collect form data
     const formData = {
-      firstName: document.querySelector('input[placeholder="Enter your name"]').value,
-      email: document.querySelector('input[placeholder="Enter your email"]').value,
-      phone: document.querySelector('input[placeholder="Enter your phone number"]').value,
-      msg: document.querySelector('textarea[placeholder="How can we help you? Brief description of care needs."]').value || "No message provided",
+      firstName: document.querySelector('input[placeholder="Enter your name"]').value.trim(),
+      email: document.querySelector('input[placeholder="Enter your email"]').value.trim(),
+      phone: document.querySelector('input[placeholder="Enter your phone number"]').value.trim(),
+      msg:
+        document.querySelector(
+          'textarea[placeholder="How can we help you? Brief description of care needs."]'
+        ).value.trim() || "No message provided",
     };
-    console.log(formData);
+
+    // Debugging: log the collected form data
+    console.log("Form data:", formData);
 
     // Send data to Google Apps Script
     fetch(scriptURL, {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify(formData),
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
       .then((response) => {
-        if (response.ok) {
-          alert("Message sent successfully!");
-          document.getElementById("contactForm").reset(); // Reset the form
-        } else {
-          alert("Error sending message. Please try again.");
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
         }
+        return response.json(); // Parse the JSON response
+      })
+      .then((data) => {
+        console.log("Success:", data);
+        alert("Message sent successfully!");
+        document.getElementById("contactForm").reset(); // Reset the form after success
       })
       .catch((error) => {
-        alert("Error: " + error.message);
+        console.error("Error:", error);
+        alert("There was an error submitting your message. Please try again.");
       });
   });
 });
+
 
 
