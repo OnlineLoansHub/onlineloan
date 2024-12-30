@@ -53,32 +53,39 @@ jQuery(document).ready(function () {
         $(this).toggleClass('active'); // Toggle class on the clicked button
     });
 
-    function showModal() {
-      $(".confused-modal").fadeIn(500).css("display", "flex"); // Adjusted for flex display if needed
+// Function to show the modal
+function showModal() {
+  if (!sessionStorage.getItem("popupClosed")) { // Check if popupClosed is not set in session storage
+      $(".confused-modal").fadeIn(500).css("display", "flex"); // Show modal with flex display
       $("body").addClass("popup-active"); // Add class to body
   }
+}
 
-  // Hide the modal initially
-  $(".confused-modal").hide();
+// Hide the modal initially
+$(".confused-modal").hide();
+
+// Detect when the user is about to leave the page
+$(document).on("mouseleave", function (event) {
+  if (event.clientY <= 0 && !sessionStorage.getItem("popupClosed")) { // Detect mouse leaves and check session storage
+      showModal();
+  }
+});
+
+// Add a close button event listener
+$(".confused-modal .close-button, .btn-close-it").on("click", function () { 
+  $(".confused-modal").fadeOut(500, function () {
+      $("body").removeClass("popup-active"); // Remove class from body after fadeOut completes
+  });
+  sessionStorage.setItem("popupClosed", "true"); // Set popupClosed in session storage
+});
+
 
   // Show the modal after 120 seconds
   // setTimeout(function () {
   //     showModal();
   // }, 120000); 
 
-  // Detect when the user is about to leave the page
-  $(document).on("mouseleave", function (event) {
-      if (event.clientY <= 0) { // Detects when the mouse leaves the viewport at the top
-          showModal();
-      }
-  });
 
-  // Close button functionality
-  $(".btn-close-it").on("click", function () {
-      $(".confused-modal").fadeOut(500, function() {
-          $("body").removeClass("popup-active"); // Remove class from body
-      });
-  });
-    
+
     
 });

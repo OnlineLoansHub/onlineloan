@@ -221,6 +221,7 @@ header nav ul {
     transform: translatey(0px);
     -webkit-animation: float 3s ease-in-out alternate infinite;
     animation: float 3s ease-in-out alternate infinite;
+
 }
 .img2.sub-img {
     right: 0;
@@ -280,9 +281,9 @@ header nav ul {
     }
 }
 .hero-text span{
-    background-color: var(--white);
+    background-color: #F0F5FF;
     border-radius: 30px;
-    padding: 8px 12px;
+    padding: 8px 18px;
     font-weight: 600;
     color: var(--black1);
 }
