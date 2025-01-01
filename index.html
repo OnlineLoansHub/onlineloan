@@ -4963,7 +4963,7 @@
     .ppc-single-vendor .logo-score-holder {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       margin-bottom: 12px
     }
 
@@ -5334,13 +5334,13 @@
       }
 
       .ppc-single-vendor .col-logo {
-        width: 16%;
+        width: 18%;
         text-align: center
       }
 
       .ppc-single-vendor .col-score {
         display: block;
-        width: 16%;
+        width: 18%;
         text-align: center
       }
 
@@ -5359,7 +5359,7 @@
       }
 
       .ppc-single-vendor .col-special-offer {
-        width: 20%;
+        width: 18%;
         text-align: center;
         margin-bottom: 0
       }
@@ -9124,11 +9124,11 @@
 
       .ppc-single-vendor.ppc-single-vendor-47 .col-logo.with-offer-above-bullets,
       .ppc-single-vendor.ppc-single-vendor-47 .col-medal.with-offer-above-bullets {
-        width: 18%
+        width: 25%
       }
 
       .ppc-single-vendor.ppc-single-vendor-47 .col-bullets.with-offer-above-bullets {
-        width: 48%
+        width: 38%
       }
 
       .ppc-single-vendor.ppc-single-vendor-47 .col-bullets.with-offer-above-bullets .bullets-description {
@@ -13148,7 +13148,7 @@
         ribbonText: "Best Rate Guarantee",
         rank: 1,
         logo: "./indexAssets/creditNinja.svg",
-        logoAlt: "Credible Logo",
+        logoAlt: "creditNinja Logo",
         score: 10,
         trustpilotScore: 10,
         trustpilotReviews: "Based on 6953 User Reviews",
@@ -13160,13 +13160,13 @@
         creditScore: "Fair/Good/Excellent",
         loanAmount: "$600 - $200,000",
         ctaPrimary: {
-          url: "https://www.credible.com/personal-loan",
+          url: "https://www.creditninja.com/?oid=9&affid=5",
           text: "Get My Rate",
           rel: "sponsored nofollow noopener noreferrer",
         },
         ctaSecondary: {
-          url: "https://www.credible.com/personal-loan",
-          text: "Visit Credible",
+          url: "https://www.creditninja.com/?oid=9&affid=5",
+          text: "Visit Credit Ninja",
           rel: "sponsored nofollow noopener noreferrer",
         },
         socialProof: "2967 people visited this site this week",
@@ -13274,17 +13274,20 @@
         brandReputation: 9.9,
         brandReputationText: "Based on web trends",
         score: 9.9,
+        stars: 4.5,
+        amountOfReviews:900,
+        reviwerLogo:"./indexAssets/trustpilot-icon.svg",
         specialOffer: "Get funded fast after approval",
         apr: "8.98%-35.99%",
         loanTerm: "24 - 60 Months",
         creditScore: "Fair, Good, Excellent",
         ctaPrimary: {
-          url: "https://www.credible.com/personal-loans/borrower/step/amount",
+          url: "https://wizzay.com/?c=294125&v1=subsource&v2=clickid",
           text: "Get My Rate",
         },
         ctaSecondary: {
-          url: "https://www.credible.com/personal-loans/borrower/step/amount",
-          text: "Visit LendingClub",
+          url: "https://wizzay.com/?c=294125&v1=subsource&v2=clickid",
+          text: "Visit Wizzay",
         },
       },
       {
@@ -13292,11 +13295,14 @@
         rank: 3,
         logo: "./indexAssets/nowpersonalloan.svg",
         logoAlt: "nowpersonalloan Logo",
-        trustpilotScore: 9.4,
+        trustpilotScore: 9.7,
         trustpilotReviews: "Based on 5776 User Reviews",
-        brandReputation: 9.8,
+        brandReputation: 9.7,
         brandReputationText: "Based on web trends",
         score: 9.8,
+        stars: 5,
+        amountOfReviews:900,
+        reviwerLogo:"./indexAssets/trustpilot-icon.svg",
         specialOffer: "Get funded fast after approval",
         apr: "8.98%-35.99%",
         loanTerm: "24 - 60 Months",
@@ -13319,7 +13325,10 @@
         trustpilotReviews: "Based on 5776 User Reviews",
         brandReputation: 9.8,
         brandReputationText: "Based on web trends",
-        score: 9.8,
+        score: 9.7,
+        stars: 5,
+        amountOfReviews:900,
+        reviwerLogo:"./indexAssets/trustpilot-icon.svg",
         specialOffer: "Get funded fast after approval",
         apr: "8.98%-35.99%",
         loanTerm: "24 - 60 Months",
@@ -13342,7 +13351,10 @@
         trustpilotReviews: "Based on 5776 User Reviews",
         brandReputation: 9.8,
         brandReputationText: "Based on web trends",
-        score: 9.8,
+        score: 9.6,
+        stars: 5,
+        amountOfReviews:900,
+        reviwerLogo:"./indexAssets/trustpilot-icon.svg",
         specialOffer: "Get funded fast after approval",
         apr: "8.98%-35.99%",
         loanTerm: "24 - 60 Months",
@@ -13361,46 +13373,6 @@
     vendors2.forEach(vendor => {
       const card2 = `
         <div class="ppc-single-vendor ppc-single-vendor-47 ppc-vendor-${vendor.id} with-tooltip-content">
-            <div class="score-tooltip-holder mobile" style="display: none;">
-                <div class="score-tooltip-content desktop">
-                    <a href="#" class="close-button unbind-data-href"><i class="fas fa-close-thick"></i></a>
-                    <div class="score-values">
-                        <div class="unbind-data-href score-value">
-                            <div class="value-holder">
-                                <div class="icon">
-                                    <picture class="svg-picture-holder">
-                                        <img src="/indexAssets/trustpilot-icon.svg" alt="${vendor.logoAlt}">
-                                    </picture>
-                                </div>
-                                <div class="progress-circle p94 over50 blue">
-                                    <span class="value">${vendor.trustpilotScore}</span>
-                                    <div class="left-half-clipper">
-                                        <div class="first50-bar"></div>
-                                        <div class="value-bar"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="label-holder">Trustpilot Score</div>
-                            <div class="text-holder">${vendor.trustpilotReviews}</div>
-                        </div>
-                        <div class="unbind-data-href score-value">
-                            <div class="value-holder">
-                                <div class="icon"><i class="fas fa-cup-filled brand-reputation"></i></div>
-                                <div class="progress-circle p98 over50 yellow">
-                                    <span class="value">${vendor.brandReputation}</span>
-                                    <div class="left-half-clipper">
-                                        <div class="first50-bar"></div>
-                                        <div class="value-bar"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="label-holder">Brand Reputation</div>
-                            <div class="text-holder">${vendor.brandReputationText}</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="list-index">${vendor.rank}</div>
 
             <div class="col-logo with-offer-above-bullets">
@@ -13413,6 +13385,18 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="trustpilot-number-container desktop show-on-desktop">
+    <div class="trustpilot-number-holder">
+        <div class="trustpilot-number">${vendor.amountOfReviews}</div>
+        <div class="label">Reviews</div>
+        <div class="logo">
+            <picture class="svg-picture-holder">
+                <img src="${vendor.reviwerLogo}" />
+            </picture>
+        </div>
+    </div>
+</div>
             </div>
 
         
@@ -13421,11 +13405,10 @@
                 <span class="score-value">${vendor.score}</span>
                 <a href="#" class="unbind-data-href with-score-tooltip-link-desktop">
                     <div class="stars-container green">
-                        <div class="stars-rating editorial-score" style="--rating: ${vendor.score * 10}%;"></div>
+                        <div class="stars-rating editorial-score" style="--rating: ${vendor.stars * 20}%;"></div>
                     </div>
                     <small>
-                        Our score
-                        <span class="coverage-tooltip-icon"><i class="fas fa-circle-info"></i></span>
+                        Based on 4934 User Reviews
                     </small>
                 </a>
             </div>
