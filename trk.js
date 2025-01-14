@@ -41,19 +41,24 @@ const logData = {
 
 function logRequestDetails() {
     logData.actionType = "request"
-    fetch(webAppUrl, {
-        method: "POST",
-        redirect: "follow",
-        headers: new Headers({
-            "Content-Type": "text/plain;charset=utf-8",
-        }),
-        body: JSON.stringify(logData)
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Data saved to Google Sheet:', data);
+    if (domain === "127.0.0.1") {
+        console.log({logData});
+    } else {
+        fetch(webAppUrl, {
+            method: "POST",
+            redirect: "follow",
+            headers: new Headers({
+                "Content-Type": "text/plain;charset=utf-8",
+            }),
+            body: JSON.stringify(logData)
         })
-        .catch(err => console.error('Error saving data:', err));
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data saved to Google Sheet:', data);
+            })
+            .catch(err => console.error('Error saving data:', err));
+    }
+
 }
 logRequestDetails();
 
