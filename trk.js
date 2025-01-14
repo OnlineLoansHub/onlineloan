@@ -8,9 +8,14 @@ function logRequestDetails() {
     const fullRequest = window.location.href;
     const params = {};
 
+
+      // Map query parameters to sub1, sub2, sub3, etc.
+      const subs = {};
+      let index = 1;
     // Extract all query parameters
     urlParams.forEach((value, key) => {
-        params[key] = value;
+        subs[`sub${index}`] = `${value}`;
+        index++;
     });
 
     // Fetch IP Address
@@ -23,17 +28,18 @@ function logRequestDetails() {
                 gclid: gclid,
                 domain: domain,
                 fullRequest: fullRequest,
-                params: params
+                ...subs,
+                actionType: "request"
             };
 
             // Send data to Google Sheet
-            const webAppUrl = 'https://script.google.com/macros/s/AKfycbx6eUYcvGVLWz4dAWXiYl3wGL669nUghtp_9LkIbA-xx2VNreaMEwDhtdx6SIPiccb2/exec'; // Replace with your Web App URL
+            const webAppUrl = 'https://script.google.com/macros/s/AKfycby4CJO9qsw-Pk2Gr4RGQsSlvxcQRT4OCSgY27Id7YlJbSQt5weD-3wTZZ-5eVge2B91/exec'; // Replace with your Web App URL
             fetch(webAppUrl, {
+                method: "POST",
                 redirect: "follow",
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: new Headers({
+                  "Content-Type": "text/plain;charset=utf-8",
+                }),
                 body: JSON.stringify(logData)
             })
             .then(response => response.json())
