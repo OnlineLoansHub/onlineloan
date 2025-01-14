@@ -19,8 +19,10 @@ const logData = {
     gclid: gclid,
     domain: domain,
     fullRequest: fullRequest,
-    ...subs,
-    actionType: ""
+    actionType: "",
+    ipAddress: "",
+    payout: "",
+    ...subs
 };
 
 function logRequestDetails() {
