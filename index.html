@@ -4804,8 +4804,8 @@
       border-radius: 10px;
       padding: 32px 12px 12px;
       background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, .0784313725);
-      margin-bottom: 24px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 40px;
       position: relative;
       cursor: pointer
     }
@@ -4889,7 +4889,7 @@
     }
 
     .ppc-single-vendor.with-badge .list-index {
-      background-color: #1E8449;
+      background-color: #0B5345;
       color: #fff
     }
 
@@ -12063,7 +12063,7 @@
         txt3: "Flexible repayment schedule",
         txt4: "Unsecured personal loans available",
         ctaPrimary: {
-          url: "https://www.creditninja.com/?oid=9&affid=5" + window.location.search.split("?")[1],
+          url: "https://www.creditninja.com/?oid=9&affid=5" + window.location.search?.split("?")[1],
           text: "Get My Rate",
           rel: "sponsored nofollow noopener noreferrer",
         },
@@ -12171,7 +12171,7 @@
         id: 2,
         rank: 2,
         logo: "./indexAssets/LowCreditFinance.png",
-        logoAlt: "wizzay Logo",
+        logoAlt: "LowCreditFinance Logo",
         trustpilotScore: 9.9,
         trustpilotReviews: "Based on 5776 User Reviews",
         brandReputation: 9.9,
@@ -12185,19 +12185,20 @@
         txt2: "Personal loans up to $50,000",
         txt3: "Almost instant online lending decision",
         ctaPrimary: {
-          url: "https://wizzay.com/?c=294125&v1=subsource&v2=clickid",
+          url: "https://lowcreditfinance.com/?aff67613" + window.location.search?.split("?")[1] || "",
           text: "Get My Rate",
         },
         ctaSecondary: {
-          url: "https://wizzay.com/?c=294125&v1=subsource&v2=clickid",
-          text: "Visit Wizzay",
+          url: "https://lowcreditfinance.com/?aff67613" + window.location.search?.split("?")[1] || "",
+          text: "Visit Low Credit Finance",
         },
+        ribbonText: "Best Rate Guarantee",
       },
       {
         id: 3,
         rank: 3,
-        logo: "./indexAssets/nowpersonalloan.svg",
-        logoAlt: "nowpersonalloan Logo",
+        logo: "./indexAssets/superpersonalfinder.png",
+        logoAlt: "superpersonalfinder Logo",
         trustpilotScore: 9.7,
         trustpilotReviews: "Based on 5776 User Reviews",
         brandReputation: 9.7,
@@ -12211,13 +12212,14 @@
         txt2: "Personal loans up to $50,000",
         txt3: "Almost instant online lending decision",
         ctaPrimary: {
-          url: "https://www.CreditNinja.com/personal-loans/borrower/step/amount",
+          url: "https://superpersonalfinder.com/?aff67605" + window.location.search?.split("?")[1] || "",
           text: "Get My Rate",
         },
         ctaSecondary: {
-          url: "https://www.CreditNinja.com/personal-loans/borrower/step/amount",
-          text: "Visit LendingClub",
+          url: "https://superpersonalfinder.com/?aff67605" + window.location.search?.split("?")[1] || "",
+          text: "Visit Super Personal Finder",
         },
+        ribbonText: "Best Rate Guarantee",
       },
       {
         id: 4,
@@ -12244,6 +12246,7 @@
           url: "https://www.CreditNinja.com/personal-loans/borrower/step/amount",
           text: "Visit LendingClub",
         },
+        ribbonText: "Best Rate Guarantee",
       },
       {
         id: 5,
@@ -12270,12 +12273,17 @@
           url: "https://www.CreditNinja.com/personal-loans/borrower/step/amount" + window.location.search,
           text: "Visit LendingClub",
         },
+        ribbonText: "Best Rate Guarantee",
       },
     ];
 
     vendors2.forEach(vendor => {
       const card2 = `
-        <div class="ppc-single-vendor ppc-single-vendor-47 ppc-vendor-${vendor.id} with-tooltip-content">
+        <div class="ppc-single-vendor ppc-single-vendor-47 ppc-vendor-${vendor.id} with-social-proof with-badge with-tooltip-content">
+
+               <!-- Ribbon displaying offer -->
+            <div class="vendor-ribbon">${vendor.ribbonText}</div>
+            
             <div class="list-index">${vendor.rank}</div>
 
             <div class="col-logo with-offer-above-bullets">
