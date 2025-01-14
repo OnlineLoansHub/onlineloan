@@ -35,7 +35,7 @@ const logData = {
     fullRequest: fullRequest,
     actionType: "N/A",
     ipAddress: "N/A",
-    payout: "N/A",
+    payout: 0,
     ...subs
 };
 
