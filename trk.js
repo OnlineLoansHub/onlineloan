@@ -1,3 +1,15 @@
+async function getUserIP() {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        console.log('User IP Address:', data.ip);
+        return data.ip;
+    } catch (error) {
+        console.error('Error fetching IP address:', error);
+        return "N/A";
+    }
+}
+
 const webAppUrl = 'https://script.google.com/macros/s/AKfycby4CJO9qsw-Pk2Gr4RGQsSlvxcQRT4OCSgY27Id7YlJbSQt5weD-3wTZZ-5eVge2B91/exec'; // Replace with your Web App URL
 const now = new Date();
 const date = now.toLocaleDateString();
@@ -8,6 +20,7 @@ const domain = window.location.hostname;
 const fullRequest = window.location.href;
 const params = {};
 const subs = {};
+const ip = getUserIP()
 let index = 1;
 urlParams.forEach((value, key) => {
     subs[`sub${index}`] = `${value}`;
@@ -18,10 +31,11 @@ const logData = {
     time: time,
     gclid: gclid,
     domain: domain,
+    offer: "N/A",
     fullRequest: fullRequest,
-    actionType: "",
-    ipAddress: "",
-    payout: "",
+    actionType: "N/A",
+    ipAddress: "N/A",
+    payout: "N/A",
     ...subs
 };
 
